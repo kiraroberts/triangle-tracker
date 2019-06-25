@@ -1,17 +1,10 @@
-function triangleType(s1, s2, s3) {
-  if (s1 + s2 <= s3 || s1 + s3 <=s2 || s2 + s3 <= s1) {
-    return "Not a triangle";
-  }
-  if (s1 === s2 && s1 === s3 && s2 === s3) {
-    return "Equilateral";
-  } else if (s1 !== s2 && s1 !== s3 && s2 !== s3) {
-    return "Scalene";
-  } else if (s1 === s2 || s1 === s3 || s2 === s3) {
-    return "Isosceles";
-  }
-}
+import $ from 'jquery';
+import { triangleType } from './triangle-tracker.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import './styles.css';
+import 'bootstrap';
 
-//
+
 $(document).ready(function() {
   $("form#triangle").submit(function(event) {
     var side1 = parseFloat($("#side1").val());
